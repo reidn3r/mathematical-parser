@@ -5,8 +5,15 @@ def main():
     lexer = Lexer()
     parser = Parser()
 
-    t = lexer.run("31 * (4  + 10)")
+    t = lexer.run("1 + 3 * 4 + 1")
     parser.parse2tree(t)
+    parser.print_tree()
+
+    print("\n\n")
+
+    t = lexer.run("1 + 3 * (4 + 1)")
+    parser.parse2tree(t)
+    parser.print_tree()
     return;
 
 if __name__ == "__main__":
