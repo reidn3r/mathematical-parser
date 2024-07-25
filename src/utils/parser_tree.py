@@ -69,7 +69,7 @@ class ParserTree:
 
 
     def __find_best_operator__(self, tokens):
-        parentesis_count, removed_parentedis = 0,  False
+        parentesis_count = 0
         operator_index, min_precedence_op, min_precedence = -1, "", 3
 
         precedence = {
@@ -80,17 +80,15 @@ class ParserTree:
         }
 
         if(tokens[0] == "("):
-            tokens.pop(0)
-            removed_parentedis = True
+            last_token_idx = len(tokens) - 1
+            if(tokens[last_token_idx] == ")"):
+                tokens.pop(0), tokens.pop()
 
         for idx, t in enumerate(tokens):
             if t == '(':
                 parentesis_count += 1
             if t == ')':
                 parentesis_count -= 1
-                if(removed_parentedis): 
-                    tokens.pop(idx)
-                    parentesis_count += 1 
 
             if parentesis_count == 0 and t in self.operator:
                 if(precedence[t] < min_precedence):
@@ -98,7 +96,7 @@ class ParserTree:
                     operator_index = idx
         
         if(parentesis_count != 0):
-            print('Sintax Error: ")" or "("')
+            raise ValueError("Syntax Error: ) or ( used incorrectly")
 
         return min_precedence_op, operator_index
     
