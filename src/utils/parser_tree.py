@@ -79,9 +79,9 @@ class ParserTree:
             "/": 2,
         }
 
-        if(tokens[0] == "("):
-            last_token_idx = len(tokens) - 1
-            if(tokens[last_token_idx] == ")"):
+        if(tokens[0] == "("):            
+            closing_parentesis_idx = self.__find_closing_parentesis_index__(tokens, parentesis_count)
+            if(tokens[-1] == ")" and closing_parentesis_idx == len(tokens) - 1):
                 tokens.pop(0), tokens.pop()
 
         for idx, t in enumerate(tokens):
@@ -104,6 +104,17 @@ class ParserTree:
         for t in tokens:
             if t not in self.operator and t not in ["(", ")"]:
                 return t
+            
+    def __find_closing_parentesis_index__(self, tokens, open_parentesis_count):
+        for idx, t in enumerate(tokens):
+            if t == "(":
+                open_parentesis_count += 1
+            
+            if t == ")":
+                open_parentesis_count -= 1
+            
+            if t == ")" and open_parentesis_count == 0:
+                return idx
 
 
 

@@ -5,8 +5,8 @@ def main():
     lexer = Lexer()
     parser = Parser()
 
-    t = lexer.run("3*(2-(1/(3+2))*3)")
-    # t = lexer.run("(4+3)*(5/(2+3)+6)") #Montando a árvore incorretamente
+    # t = lexer.run("3*(2-(1/(3+2))*3)")
+    t = lexer.run("((4+3)*(5/(2+3)+6))") #Montando a árvore corretamente
     print(t)
     parser.parse2tree(t)
     parser.print_tree()
