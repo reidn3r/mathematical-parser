@@ -7,7 +7,7 @@ class ParserTree:
         self.tokens = []
 
     def parse(self, tokens):
-        self.tokens = tokens;
+        self.tokens = tokens
         self.__build__(self.root, tokens)
         return self.root
 
