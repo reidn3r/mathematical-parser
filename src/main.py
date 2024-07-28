@@ -5,17 +5,19 @@ from utils.shunting_yard import ParserShuntingYard
 from utils.read_io_file import file_stream
 
 def main(path:str):
-    lexer = Lexer()
-    parser = Parser()
-    sy = ParserShuntingYard()
 
+    lexer = Lexer()
     for t in file_stream(path):
+        parser = Parser()
+        sy = ParserShuntingYard()
+        
         print(t)
+        
         t = lexer.run(t)
         q = sy.parse(t)
         tree = parser.parse2tree(q)
         evaluator = Evaluator(tree)
-        # evaluator.evalTree(tree)
+        evaluator.evalTree(tree)
 
     return
 
