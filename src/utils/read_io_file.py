@@ -1,3 +1,5 @@
 
 def file_stream(path:str):
-    pass
+    with open(path, 'r') as f:
+        for line in f:
+            yield line
