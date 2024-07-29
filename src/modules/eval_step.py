@@ -1,17 +1,18 @@
 from utils.parser_tree import ParserTree
+from utils.node import Node
 
 class Evaluator:
-    def __init__(self, root_node: ParserTree):
+    def __init__(self, root_node: Node):
         self.root = root_node
 
     def evalStep(self):
         if not isinstance(self.root.data, int):
             self.__lowerOperationNode__(self.root)
         else:
-            raise RuntimeError(f'Não é possível avaliar um digito.')
+            print(self.root.data) # se a árvore só tem um nó (raiz), printa o conteúdo desse nó
 
 
-    def __lowerOperationNode__(self, root:ParserTree):
+    def __lowerOperationNode__(self, root:Node):
         
         # desce in-order para a direita até achar o nó folha mais baixo
         # se achar um nó folha descendo para direita e ainda tem operadores no nó da esquerda
@@ -26,7 +27,7 @@ class Evaluator:
             root.data = result
             root.left = None
             root.right = None
-            print(root.data) # printando para ver se deu o resultado esperado
+            # print(root.data) # printando para ver se deu o resultado esperado
             return
 
     def __valueOperate__(self, left, right, op):
