@@ -17,6 +17,7 @@ class ToString:
         if root.left is None and root.right is None:
             return str(root.data)
 
+        # Verifica se a precedência da operação do nó inferior é menor, logo a expressão necessita de parênteses
         if not isinstance(root.left.data, int) and self.precedence[root.left.data] < self.precedence[root.data]:
             left_expr = self.to_expression(root.left, parentesis=True)
         else:
