@@ -12,3 +12,4 @@ class Parser():
         root = self.tree.root
         if root is not None:
             self.tree.in_order(root)
+        print()

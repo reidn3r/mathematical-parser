@@ -36,7 +36,7 @@ class ParserTree:
             if root.left:
                 self.in_order(root.left)
 
-            print(root.data)
+            print(root.data, end=' ')
             
             if root.right:
                 self.in_order(root.right)

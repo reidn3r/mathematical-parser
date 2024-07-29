@@ -52,8 +52,8 @@ class Evaluator:
            operation = root_node.data
            left_operator = self.evalTree(root_node.left)
 
-           print(f"left: {left_operator},right: {right_operator}, operation: {operation}")
-           print(self.__valueOperate__(left_operator, right_operator, operation))
+           print(f"left: {left_operator}, right: {right_operator}, operation: {operation}", end=' ')
+           print(f'-> {self.__valueOperate__(left_operator, right_operator, operation)}')
 
            return self.__valueOperate__(left_operator, right_operator, operation)
            
