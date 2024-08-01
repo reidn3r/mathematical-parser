@@ -1,10 +1,10 @@
-from utils.exec_class import execution
+from utils.evaluator import Evaluator
 
 def main(path:str):
-    exec_class = execution(path)
-    exec_class.exec()
+    eval = Evaluator(path)
+    eval.execute()
 
 
 if __name__ == "__main__":
-    path:str = "io/input.txt"
+    path:str = "../io/input.txt"
     main(path)

@@ -1,7 +1,7 @@
 from utils.parser_tree import ParserTree
 from utils.node import Node
 
-class Evaluator:
+class EvalStep:
     def __init__(self, root_node: Node):
         self.root = root_node
 
