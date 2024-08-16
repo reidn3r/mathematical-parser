@@ -53,6 +53,8 @@ class Lexer:
 
             else:
                 # Levanta uma exceção para caracteres inesperados
-                raise RuntimeError(f'Caractere inesperado: {current_char}')
+                #raise RuntimeError(f'Caractere inesperado: {current_char}')
+                print(f'Caractere inesperado: {current_char}')
+                current_position += 1
 
         return tokens
