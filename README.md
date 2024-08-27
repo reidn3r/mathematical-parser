@@ -1,40 +1,39 @@
-<h2 align="center"> Avaliador de Expressões Matemáticas </h2>
-<p align="justify"> Implementação de um avaliador de expressões aritméticas. O trabalho inclui o desenvolvimento de um lexer, parser, e um avaliador passo a passo, com foco na facilidade de leitura, confiabilidade e custo de execução.</p>
+<h2 align="center"> Mathematical Expression Evaluator </h2>
+<p align="justify"> Implementation of an arithmetic expression evaluator. The work includes the development of a lexer, parser, and a step-by-step evaluator, focusing on readability, reliability, and execution cost.</p>
 
-<p align="center"> <a href="https://malbarbo.pro.br/ensino/2019/9795/trabalho-comp/" target="_blank"> Enunciado Completo </a> </p>
+<p align="center"> <a href="https://malbarbo.pro.br/ensino/2019/9795/trabalho-comp/" target="_blank"> Full Assignment (pt-br) </a> </p>
 
 <hr>
 
-# Arquitetura Geral:
+# Overall Architecture:
 <p align="center">
     <img src="./assets/architecture.png" alt="Software Architecture">
 </p>
 
 ### Lexer:
 <p align="center">
-    <p> Recebe expressão como entrada e retorna array de tokens</p>
+    <p> Receives the expression as input and returns an array of tokens</p>
     <img src="./assets/lexer.png" alt="Lexer Architecture">
 </p>
 
 ### Parser:
 <p align="center">
-    <p> Recebe array de tokens como entrada e constrói uma árvore sintática que representa a expressão inicial</p>
+    <p> Receives an array of tokens as input and builds a syntax tree that represents the original expression</p>
     <img src="./assets/parser.png" alt="Parser Architecture">
 </p>
 
 ### Eval Step:
 <p align="center">
-    <p> Percorre a árvore da expressão seguindo a abordagem bottom-up, e resolve a expressão toda por partes, avaliando resultados inferidos por sub-árvores</p>
+    <p> Traverses the expression tree following a bottom-up approach, resolving the entire expression in parts by evaluating results inferred by subtrees</p>
     <img src="./assets/eval-step.png" alt="Eval Step">
 </p>
 
 ### To String:
 <p align="center">
-    <p> Percorre a árvore e imprime o estado atual da expressão</p>
+    <p> Traverses the tree and prints the current state of the expression</p>
 </p>
 
-
-## Feito por:
+## Created by:
 * <a href="https://github.com/reidn3r" target="_blank">Reidner</a>
 * <a href="https://github.com/Vitor-Padovani" target="_blank">Vitor Padovani</a>
 * <a href="https://github.com/Hudson-H" target="_blank">Hudson da Silva</a>
